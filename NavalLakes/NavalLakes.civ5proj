@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{2b5ff6cf-0ee3-4162-94ca-cd64a570bbc6}</ProjectGuid>
+    <Name>Naval Lakes</Name>
+    <Guid>84db2785-3ad7-4d9c-9ff2-a62ec8e1267e</Guid>
+    <ModVersion>1</ModVersion>
+    <Stability>Alpha</Stability>
+    <Teaser>Various improvements to lake/inland sea naval gameplay.</Teaser>
+    <Description>Various improvements to lake/inland sea naval gameplay.</Description>
+    <Authors>uvlime</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>NavalLakes</AssemblyName>
+    <RootNamespace>NavalLakes</RootNamespace>
+    <ModReferences />
+    <ModActions>
+      <Action xmlns="">
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/NavalUnitsOnLakes.xml</FileName>
+      </Action>
+    </ModActions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+    <DeployMod>false</DeployMod>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+    <DeployMod>true</DeployMod>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XML\NavalUnitsOnLakes.xml">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

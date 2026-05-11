@@ -1,0 +1,12 @@
+# General
+*.bak
+
+# VS
+*.*suo
+
+# ModBuddy
+Build/
+Packages/
+
+# Images
+*.xcf

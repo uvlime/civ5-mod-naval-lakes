@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Allow naval units to be built in lake/inland sea coastal cities by (significantly) decreasing
+ * the number of water tiles required to build them.
+ *
+ * @author uvlime
+ */
+-->
+<GameData>
+	<Units>
+		<Update>
+			<Where Domain="DOMAIN_SEA"/>
+			<Set MinAreaSize="6"/>
+		</Update>
+	</Units>
+</GameData>
